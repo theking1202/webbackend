@@ -75,12 +75,12 @@
                         </div>
                     </form>
             <?php
-                if(isset($_POST['add'])){
+                if(isset($_POST['btnThem'])){
                     $hoa_ten = htmlentities( $_POST['hoa_ten']);
                     $hoa_mota = htmlentities( $_POST['hoa_mota']);
                     $hoa_gia = htmlentities( $_POST['hoa_gia']);
                     $hoa_giacu = htmlentities( $_POST['hoa_giacu']);
-                    $hoa_soluong = htmlentities( $_POST['hoa_mota']);
+                    $hoa_soluong = htmlentities( $_POST['hoa_soluong']);
                     $lh_ma = htmlentities( $_POST['lh_ma']);
                     include_once('../../../connectdb.php');
                     $sql =<<<EOT
@@ -88,11 +88,15 @@
                     (hoa_ten, hoa_mota, hoa_soluong, hoa_gia, hoa_giacu, hoa_ngaycapnhat, lh_ma)
                     VALUES ("$hoa_ten", "$hoa_mota", $hoa_soluong, $hoa_gia, $hoa_giacu, NOW(), $lh_ma)
 EOT;
-                    var_dump($sql); die;
+                    // var_dump($sql); die;
                     $result = mysqli_query($conn,$sql);
-                    header('location: index.php');
+                    echo'
+                        <script>
+                            window.location="index.php";
+                        </script>
+                    ';
                 }
-            ?>
+                ?>
 
             <?php include_once("../../layout/partials/script.php")?>
             <script>
@@ -176,12 +180,6 @@ EOT;
     </div>    
 
 </div>
-
-
-
-<?php include_once("../../layout/partials/footer.php")?>
-
-
     
 <?php include_once("../../layout/partials/script.php")?>
 </body>

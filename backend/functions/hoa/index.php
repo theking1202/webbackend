@@ -20,13 +20,13 @@
         <table class="table table-dark">
             <thead>
                 <th>STT</th>
+                <th>Hoa mã</th>
                 <th>Tên hoa</th>
-                <th>Tên loại</th>
                 <th>Mô tả hoa</th>
                 <th>Số lượng</th>
                 <th>Giá</th>
                 <th>Giá cũ</th>
-                <th>Loại hoa</th>
+                <th>Ngày cập nhật</th>
                 <th>Hành động</th>
             </thead>
             <tbody>
@@ -80,10 +80,10 @@
 
 
 
-<?php include_once("../../layout/partials/footer.php")?>
 
 
-    
+
 <?php include_once("../../layout/partials/script.php")?>
 </body>
 </html>
+<?php include_once("../../layout/partials/footer.php")?>
