@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body >
-    <div class="container">
+    <div class="container-fluid">
         <div class="row" style="background-color: brown;">
             <div class="col-md-1">
                 <img src="../../assets/imgs/logo-bong-hoa-sen24-1030x773.jpg" class="img-fluid" style="width: 100px; hieght:100px; padding-left:0px" alt="">

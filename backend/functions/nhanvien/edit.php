@@ -10,84 +10,68 @@
 <body>
     
     <div class="container-fluid">
-        <?php include_once("../../layout/partials/footer.php")?>
         <div class="row">
-            <?php include_once("../../layout/partials/header.php")?>
-            <div class="col-md-3" style="padding: 0;">
-                <?php include_once("../../layout/partials/menu.php")?>
+        <?php include_once("../../layout/partials/header.php")?>
+        <div class="col-md-3" style="padding: 0;">
+            <?php include_once("../../layout/partials/menu.php")?>
         </div>
         <div class="col-md-9 ">
-                    <h1>Thêm hoa</h1>
+                    <h1>Chỉnh sửa hoa</h1>
                     <?php
                         include_once('../../../connectdb.php');
-                        $sqlLoaihoa = "select * from `loaihoa`";
+                        $ma=$_GET['nv_ma'];
+                        $sql=<<<EOT
+                        SELECT * FROM nhanvien
+                        WHERE nv_ma=$ma
+EOT;
+                        $result=mysqli_query($conn,$sql);
+                        $nhanvien=mysqli_fetch_array($result);
 
-                        // Thực thi câu truy vấn SQL để lấy về dữ liệu
-                        $resultLoaihoa = mysqli_query($conn, $sqlLoaihoa);
-
-                        // Khi thực thi các truy vấn dạng SELECT, dữ liệu lấy về cần phải phân tích để sử dụng
-                        // Thông thường, chúng ta sẽ sử dụng vòng lặp while để duyệt danh sách các dòng dữ liệu được SELECT
-                        // Ta sẽ tạo 1 mảng array để chứa các dữ liệu được trả về
-                        $dataLoaihoa = [];
-                        while ($rowLoaihoa = mysqli_fetch_array($resultLoaihoa, MYSQLI_ASSOC)) {
-                            $dataLoaihoa[] = array(
-                                'lh_ma' => $rowLoaihoa['lh_ma'],
-                                'lh_ten' => $rowLoaihoa['lh_ten'],
-                                'lh_mota' => $rowLoaihoa['lh_mota'],
+                        $sql2="SELECT * FROM chucvu";
+                        $result2=mysqli_query($conn,$sql2);
+                        $chucvu=[];
+                        while($row2=mysqli_fetch_array($result2)){
+                            $chucvu[] = array(
+                                'cv_ma'=>$row2['cv_ma'],
+                                'cv_ten'=>$row2['cv_ten'],
                             );
                         }
                     ?>
 
                     <form action="" method="POST" name="frmThem" id="frmThem">
                         <div class="form-group">
-                            <label for="hoa_ten">Tên hoa</label>
-                            <input type="text" class="form-control" id="hoa_ten" name="hoa_ten">
+                            <label for="hoa_ten">Tên nhân viên</label>
+                            <input type="text" class="form-control" id="nv_ten" name="nv_ten" value="<?=$nhanvien['nv_ten']?>">
                         </div>
                         <div class="form-group">
-                            <label for="hoa_gia">Giá hoa</label>
-                            <input type="text" class="form-control" id="hoa_gia" name="hoa_gia">
+                            <label for="nv_diachi">Địa chỉ</label>
+                            <input type="text" class="form-control" id="nv_diachi" name="nv_diachi" value="<?=$nhanvien['nv_diachi']?>">
                         </div>
                         <div class="form-group">
-                            <label for="hoa_giacu">Giá cũ</label>
-                            <input type="text" class="form-control" id="hoa_giacu" name="hoa_giacu">
-                        </div>
-                        <div class="form-group">
-                            <label for="hoa_motan_gan">Mô tả</label>
-                            <textarea name="hoa_mota" id="hoa_mota" class="form-control" ></textarea>
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="hoa_ngaycapnhat">Ngày cập nhật</label>
-                            <input type="text" class="form-control" id="hoa_ngaycapnhat" name="hoa_ngaycapnhat">
-                        </div> -->
-                        <div class="form-group">
-                            <label for="hoa_soluong">Số lượng</label>
-                            <input type="text" class="form-control" id="hoa_soluong" name="hoa_soluong">
-                        </div>
-                        <div class="form-group">
-                            <label for="lh_ma">Loại hoa</label>
-                            <select name="lh_ma" id="lh_ma" class="form-control">
-                                <?php foreach($dataLoaihoa as $lh):?>
-                                <option value="<?=$lh['lh_ma']?>"><?=$lh['lh_ten']?></option>
+                            <label for="cv_ma">Chức vụ</label>
+                            <select name="cv_ma" id="cv_ma" class="form-control">
+                                <?php foreach($chucvu as $cv):?>
+                                <option value="<?=$cv['cv_ma']?>"  <?php  echo( $cv['cv_ma'] == $nhanvien['nv_chucvu'] ? 'selected' : '' );?>><?=$cv['cv_ten']?></option>
                                 <?php endforeach;?>
                             </select>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary" name="btnThem" id="btnThem">Thêm</button>
+                            <button class="btn btn-primary" name="btnThem" id="btnThem">Lưu</button>
                         </div>
                     </form>
             <?php
                 if(isset($_POST['btnThem'])){
-                    $hoa_ten = htmlentities( $_POST['hoa_ten']);
-                    $hoa_mota = htmlentities( $_POST['hoa_mota']);
-                    $hoa_gia = htmlentities( $_POST['hoa_gia']);
-                    $hoa_giacu = htmlentities( $_POST['hoa_giacu']);
-                    $hoa_soluong = htmlentities( $_POST['hoa_soluong']);
-                    $lh_ma = htmlentities( $_POST['lh_ma']);
+                    $nv_ten = htmlentities( $_POST['nv_ten']);
+                    $nv_diachi = htmlentities( $_POST['nv_diachi']);
+                    $nv_chucvu = htmlentities( $_POST['cv_ma']);
                     include_once('../../../connectdb.php');
                     $sql =<<<EOT
-                    INSERT INTO hoa
-                    (hoa_ten, hoa_mota, hoa_soluong, hoa_gia, hoa_giacu, hoa_ngaycapnhat, lh_ma)
-                    VALUES ("$hoa_ten", "$hoa_mota", $hoa_soluong, $hoa_gia, $hoa_giacu, NOW(), $lh_ma)
+                    UPDATE nhanvien
+                    SET
+                    nv_ten='$nv_ten',
+                    nv_diachi='$nv_diachi',
+                    nv_chucvu=$nv_chucvu
+                    WHERE nv_ma=$ma
 EOT;
                     // var_dump($sql); die;
                     $result = mysqli_query($conn,$sql);

@@ -16,26 +16,23 @@
             <?php include_once("../../layout/partials/menu.php")?>
         </div>
         <div class="col-md-9 ">
-            <h1>Chỉnh sửa loại hoa</h1>
+            <h1>Chỉnh sửa chức vụ</h1>
             <?php
                 include_once('../../../connectdb.php');
-                $ma=$_GET['lh_ma'];
-                $sql="SELECT * FROM loaihoa WHERE lh_ma=$ma";
+                $ma=$_GET['cv_ma'];
+                $sql="SELECT * FROM chucvu WHERE cv_ma=$ma";
                 $result=mysqli_query($conn,$sql);
                 $row=mysqli_fetch_array($result);
             ?>
             <form action="" method="POST">
-                <label for="lh_ten">Tên loại hoa</label> <br/>
-                <input class="form-control" type="text" name="lh_ten" id="lh_ten" value="<?=$row['lh_ten']?>"/> <br/>
-                <label for="lh_mota">Mô tả loại hoa</label> <br/>
-                <input class="form-control" type="text" name="lh_mota" id="lh_mota" value="<?=$row['lh_mota']?>"/> <br/>
+                <label for="lh_ten">Tên chức vụ</label> <br/>
+                <input class="form-control" type="text" name="cv_ten" id="cv_ten" value="<?=$row['cv_ten']?>"/> <br/>
                 <button class="btn btn-primary" name="save">Lưu</button>
             </form>
             <?php
                 if(isset($_POST['save'])){
-                    $ten= htmlentities( $_POST['lh_ten']);
-                    $mota=$_POST['lh_mota'];
-                    $sql1="UPDATE loaihoa SET lh_ten='$ten' , lh_mota='$mota' WHERE lh_ma=$ma";
+                    $ten= htmlentities( $_POST['cv_ten']);
+                    $sql1="UPDATE chucvu SET cv_ten='$ten' WHERE cv_ma=$ma";
                     // var_dump($sql1); die;
                     $result1=mysqli_query($conn,$sql1);
                     header('location: index.php');

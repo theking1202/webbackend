@@ -9,10 +9,10 @@
 </head>
 <body>
     
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
         <?php include_once("../../layout/partials/header.php")?>
-        <div class="col-md-3">
+        <div class="col-md-3" style="padding: 0;">
             <?php include_once("../../layout/partials/menu.php")?>
         </div>
         <div class="col-md-9 ">

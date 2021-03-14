@@ -14,12 +14,14 @@
             padding: 0px;
             list-style-type: none;
             background-color: brown;
+            display: block;
         }
         ul li a{  
             text-decoration: none;
             color: white;
             font-size: 20px;
-            font-weight: bold; 
+            font-weight: bold;
+            display: block;
             
         }
         ul li a:hover{
@@ -33,9 +35,10 @@
 <ul>
                     <li><a href="../../../backend/functions/loaihoa/index.php">Loại hoa</a></li>
                     <li><a href="../../../backend/functions/hoa/index.php">Hoa</a></li>
-                    <li><a>Hình hoa</a></li>
-                    <li><a>Đơn hàng</a></li>
-                    <li><a>Nhân viên</a></li>
+                    <li><a href="../../../backend/functions/hinhhoa/index.php">Hình hoa</a></li>
+                    <li><a href="../../../backend/functions/donhang/index.php">Đơn hàng</a></li>
+                    <li><a href="../../../backend/functions/nhanvien/index.php">Nhân viên</a></li>
+                    <li><a href="../../../backend/functions/chucvu/index.php">Chức vụ</a></li>
                 </ul>
 </body>
 </html>

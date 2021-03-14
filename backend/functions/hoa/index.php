@@ -9,15 +9,16 @@
 </head>
 <body>
     
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
         <?php include_once("../../layout/partials/header.php")?>
-        <div class="col-md-3">
+        <div class="col-md-3" style="padding: 0;">
             <?php include_once("../../layout/partials/menu.php")?>
         </div>
         <div class="col-md-9 ">
+        <?php include_once("../../layout/partials/footer.php")?>
         <a href="create.php" class="btn btn-primary">Thêm loại hoa</a>
-        <table class="table table-dark">
+        <table class="table table-dark" style="display: block;">
             <thead>
                 <th>STT</th>
                 <th>Hoa mã</th>
@@ -86,4 +87,3 @@
 <?php include_once("../../layout/partials/script.php")?>
 </body>
 </html>
-<?php include_once("../../layout/partials/footer.php")?>
