@@ -36,7 +36,7 @@
                     <li><a href="../../../backend/functions/loaihoa/index.php">Loại hoa</a></li>
                     <li><a href="../../../backend/functions/hoa/index.php">Hoa</a></li>
                     <li><a href="../../../backend/functions/hinhhoa/index.php">Hình hoa</a></li>
-                    <li><a href="../../../backend/functions/donhang/index.php">Đơn hàng</a></li>
+                    <li><a href="../../../backend/functions/dondathang/index.php">Đơn hàng</a></li>
                     <li><a href="../../../backend/functions/nhanvien/index.php">Nhân viên</a></li>
                     <li><a href="../../../backend/functions/chucvu/index.php">Chức vụ</a></li>
                 </ul>

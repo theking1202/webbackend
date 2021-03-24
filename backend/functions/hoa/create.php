@@ -10,7 +10,7 @@
 <body>
     
     <div class="container-fluid">
-        <?php include_once("../../layout/partials/footer.php")?>
+        
         <div class="row">
             <?php include_once("../../layout/partials/header.php")?>
             <div class="col-md-3" style="padding: 0;">
