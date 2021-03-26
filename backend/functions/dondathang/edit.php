@@ -95,7 +95,7 @@
             ?>
         </div>
     </div>    
-
+    <?php include_once("../../layout/partials/footer.php")?>            
 </div>
 <script>
     // Hiển thị ảnh preview (xem trước) khi người dùng chọn Ảnh

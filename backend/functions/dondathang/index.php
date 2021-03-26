@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-9 ">
         <a href="create.php" class="btn btn-primary">Thêm đơn hàng</a>
-                <table id="tblDonhang" class="table-bordered" >
+                <table id="tblDonhang"  class="table table-dark" style="display: block;" >
                 <thead>
                     <th>Mã đơn hàng</th>
                     <th>Khách hàng</th>
@@ -78,12 +78,12 @@ EOT;
             </table>
         </div>
     </div>    
-
+    <?php include_once("../../layout/partials/footer.php")?>
 </div>
 
 
 
-<?php include_once("../../layout/partials/footer.php")?>
+
 
 
     

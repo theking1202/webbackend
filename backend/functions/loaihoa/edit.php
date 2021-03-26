@@ -44,11 +44,11 @@
         </div>
     </div>    
 
+<?php include_once("../../layout/partials/footer.php")?>
 </div>
 
 
 
-<?php include_once("../../layout/partials/footer.php")?>
 
 
     

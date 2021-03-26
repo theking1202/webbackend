@@ -48,15 +48,15 @@
                     <?php endforeach;?>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="">Hình ảnh cũ</label>
-                    <img src="/webbackend/backend/assets/uploads/products/<?=$hsp['hsp_tentaptin']?>" alt=""/>
+                    <img src="/webbackend/backend/assets/uploads/products/<?=$hsp['hsp_tentaptin']?>" width="200px"/>
                 </div>
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="hsp_tentaptin">Hình ảnh</label>
                     <input type="file" name="hsp_tentaptin" id="hsp_tentaptin" />
                 </div>
-                <div class="preview-img-container">
+                <div class="preview-img-container form-group ">
                 <img src="../../assets/imgs/degault.jpg" id="preview-img" width="200px" />
                 </div>
                 <div class="form-group">
@@ -95,7 +95,7 @@
             ?>
         </div>
     </div>    
-
+    <?php include_once("../../layout/partials/footer.php")?>    
 </div>
 <script>
     // Hiển thị ảnh preview (xem trước) khi người dùng chọn Ảnh

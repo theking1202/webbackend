@@ -16,7 +16,6 @@
             <?php include_once("../../layout/partials/menu.php")?>
         </div>
         <div class="col-md-9 ">
-        <?php include_once("../../layout/partials/footer.php")?>
         <a href="create.php" class="btn btn-primary">Thêm loại hoa</a>
         <table class="table table-dark" style="display: block;">
             <thead>
@@ -76,7 +75,7 @@
         </table>
         </div>
     </div>    
-
+    <?php include_once("../../layout/partials/footer.php")?>
 </div>
 
 

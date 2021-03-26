@@ -11,7 +11,7 @@
 </head>
 <body>
     <a href="create.php"> Them</a>
-    <table id="tblDonhang" class="table-bordered" >
+    <table id="tblDonhang" class="table table-dark" style="display: block;" >
         <thead>
             <th>Mã đơn hàng</th>
             <th>Khách hàng</th>

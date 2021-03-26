@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-9 ">
         <a href="create.php" class="btn btn-primary">Thêm hình sản phẩm</a>
-    <table class="table-bordered" >
+    <table  class="table table-dark"  >
         <thead>
             <th>STT</th>
             <th>Mã sản phẩm</th>
@@ -50,7 +50,7 @@ EOT;
                 <td><?= $h['hsp_ma'] ?></td>
                 <td><?= $h['hsp_ten'] ?></td>
                 <td>
-                    <img src="/webbackend/backend/assets/uploads/products/<?=$h['hsp_tentaptin']?>" alt="">
+                    <img src="/webbackend/backend/assets/uploads/products/<?=$h['hsp_tentaptin']?>" style="width: 200px; hieght:200px;">
                 </td>
                 <td>
                   <!-- Nút sửa, bấm vào sẽ hiển thị form hiệu chỉnh thông tin dựa vào khóa chính `lsp_ma` -->
@@ -70,11 +70,11 @@ EOT;
         </div>
     </div>    
 
+<?php include_once("../../layout/partials/footer.php")?>
 </div>
 
 
 
-<?php include_once("../../layout/partials/footer.php")?>
 
 
     
