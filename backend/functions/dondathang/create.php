@@ -68,8 +68,8 @@ EOT;
                     </div>
                     <div class="from-group">
                         <label for="dh_noigiao">Trạng thái thanh toán</label> <br/>
-                        <input type="radio" id="dh_trangthaithanhtoan1" name="dh_trangthaithanhtoan" value="0" > Chưa thanh toán <br/>
-                        <input type="radio" id="dh_trangthaithanhtoan2" name="dh_trangthaithanhtoan" value="0"> Đã thanh toán <br/>
+                        <input type="radio" id="dh_trangthaithanhtoan1" name="dh_trangthaithanhtoan" value="Chưa thanh toán" > Chưa thanh toán <br/>
+                        <input type="radio" id="dh_trangthaithanhtoan2" name="dh_trangthaithanhtoan" value="Đã thanh toán"> Đã thanh toán <br/>
                     </div>
                     <div class="from-group">
                         <label for="dh_noigiao">Hình thức thanh toán</label>
