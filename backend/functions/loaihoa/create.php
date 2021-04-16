@@ -128,7 +128,11 @@
                     include_once('../../../connectdb.php');
                     $sql = "INSERT INTO loaihoa(lh_ten,lh_mota) VALUES ('$lh_ten','$lh_mota')";
                     $result = mysqli_query($conn,$sql);
-                    header('location: index.php');
+                    echo'
+                        <script>
+                            window.location="index.php";
+                        </script>
+                    ';
                 }
             ?>
 

@@ -72,7 +72,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary" name="btnThem" id="btnThem">Thêm</button>
+                            <button class="btn btn-primary" name="btnThem" id="btnThem" style="margin: 2px;">Thêm</button>
                         </div>
                     </form>
             <?php

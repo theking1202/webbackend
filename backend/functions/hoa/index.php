@@ -16,7 +16,7 @@
             <?php include_once("../../layout/partials/menu.php")?>
         </div>
         <div class="col-md-9 ">
-        <a href="create.php" class="btn btn-primary">Thêm loại hoa</a>
+        <a href="create.php" class="btn btn-primary" style="margin: 1px;">Thêm hoa</a>
         <table class="table table-dark" style="display: block;">
             <thead>
                 <th>STT</th>
