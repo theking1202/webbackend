@@ -29,6 +29,15 @@
             <tbody>
                 <?php
                     include_once('../../../connectdb.php');
+                    $ma=$_SESSION['nhanvien'];
+                    $sqlNhanvien="SELECT * FROM nhanvien WHERE nv_ma=$ma";
+                    $resultNhanvien=mysqli_query($conn,$sqlNhanvien);
+                    $rowNhanvien=mysqli_fetch_array($resultNhanvien);
+                    if($row['nv_chucvu'] != 1){
+                        echo '<script>alert("Bạn không có quyền truy cập vào trang này")</script>';
+                        echo '<script>window.location.href="javascript: history.go(-1)"</script>';
+                    }
+
                     $sql  = <<<EOT
                     SELECT nv.nv_ma,nv.nv_ten,nv.nv_diachi,cv.cv_ten
                     FROM `nhanvien` nv

@@ -8,18 +8,30 @@
     <title>Document</title>
 </head>
 <body >
+    <?php
+        include_once('../../../connectdb.php');
+        $ma=$_SESSION['nhanvien'];
+        if(!isset($_SESSION['nhanvien'])){
+            echo '<script>window.location.href="../../functions/dangnhap/dangnhap.php"</script>';
+        }else{
+            $sql="select * from nhanvien where nv_ma=$ma";
+            $result=mysqli_query($conn,$sql);
+            $row=mysqli_fetch_array($result);
+        }
+    
+    ?>
     <div class="container-fluid">
         <div class="row" style="background-color: brown;">
-            <div class="col-md-1">
-                <img src="../../assets/imgs/logo-bong-hoa-sen24-1030x773.jpg" class="img-fluid" style="width: 100px; hieght:100px; padding-left:0px" alt="">
+            <div class="col-md-2">
+                <img src="../../assets/imgs/pt.png"  style="width: 200px; hieght:200px; margin-left:0px" alt="">
             </div>
             <div class="col-md-3 mt-2"><span style="font-weight: bold;font-size:20px;color:white;">Admin PT Flower</span></div>
-            <div class="col-md-4"></div>
+            <div class="col-md-3"></div>
             <div class="col-md-3 mt-2">
-                <span style="font-weight: bold;font-size:20px;color:white;">Xin chào</span>
+                <span style="font-weight: bold;font-size:20px;color:white;">Xin chào <?=$row['nv_ten']?></span>
             </div>
             <div class="col-md-1 mt-1">
-                <a href="logout.php" class="btn btn-warning">Logout</a>
+                <a href="../../functions/dangnhap/dangxuat.php" class="btn btn-warning">Logout</a>
             </div>
         </div>
     </div>

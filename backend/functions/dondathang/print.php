@@ -66,7 +66,7 @@ EOT;
             <td>
                 <img src="../../assets/imgs/logo-bong-hoa-sen24-1030x773.jpg" alt="" style="width:100px; height:100px">
             </td>
-            <td style="text-align: center;"><h1 >Công ty Salomon</h1></td>
+            <td style="text-align: center;"><h1 >Công ty TNHH Hoa PT Flower</h1></td>
         </tr>
     </table>
     <i>Thông tin đơn hàng</i>
