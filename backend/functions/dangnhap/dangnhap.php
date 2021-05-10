@@ -64,9 +64,10 @@
             $nv=mysqli_fetch_array($result);
             if($mk != $nv['nv_matkhau']){
                 echo '<script>alert("Mật khẩu không đúng. Vui lòng nhập đúng mật khẩu")</script>';  
-            }
+            }else{
             $_SESSION['nhanvien']=$nv['nv_ma'];
             echo '<script>window.location.href="../hoa/index.php"</script>';
+            }
         }    
     ?>
     <?php include_once("../../layout/partials/script.php")?>

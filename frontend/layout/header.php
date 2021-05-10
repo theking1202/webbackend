@@ -10,20 +10,32 @@
     <style>
         a:hover{
             text-decoration: none;
-            color:blue;
+            color:black;
         }
         ul{
+            text-align: left;
+            margin-left: 40px;
+            padding: 0px;
             list-style-type: none;
         }
-        ul li{
-            font-size: 24px;
-        }
-        ul li a{
+        ul li a{  
+            text-decoration: none;
             color:black;
+            font-size: 20px;
+            display: block;
+            
+        }
+        ul li{
+            height: 33px;
+        }
+        ul li a:hover{
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
         }
     </style>
 </head>
-<body style="background-color: gray;">
+<body style="background-color: #dcdcdc;">
     <div class="container-fluid" style="background-color: white;">
         <div class="row text-center" style="height: 100px;">
             <div class="col-md-1"></div>
@@ -37,24 +49,27 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm</button>
                     </form>
-                    <i class="fa fa-cart-plus fa-3x ml-0" aria-hidden="true"></i>
+                    <a href="">
+                        <i class="fa fa-cart-plus fa-3x ml-0" aria-hidden="true"></i>
+                    </a>
                 </nav>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-1"></div>
         </div>
 
-        <div class="row" style="background-color: #f5accd;">
+        <div class="row" style="background-color: #ffe6f2;">
             <div class="col-md-1"></div>
             <div class="col-md-2">
-                <ul class="mx-auto" style="margin: 0; padding:0; background-color:white">
-                    <li><h5>NHÓM SẢN PHẨM</h5></li>
-                    <li><a href="">Ngày sinh nhật</a> </li>
-                    <li><a href="">Hoa cưới</a> </li>
-                    <li><a href="">Hoa khai trương</a> </li>
-                    <li><a href="">Hoa chúc mừng</a> </li>
-                    <li><a href="">Hoa chia buồn</a> </li>
-                    <li><a href="">Hoa cảm ơn</a> </li>
+                    <h4 class="ml-4">Loại sản phẩm</h4>
+                
+                <ul>
+                    <li><a href="../../../backend/functions/loaihoa/index.php">Hoa sinh nhật</a></li>
+                    <li><a href="../../../backend/functions/hoa/index.php">Hoa cưới</a></li>
+                    <li><a href="../../../backend/functions/hinhhoa/index.php">Hoa khai trương</a></li>
+                    <li><a href="../../../backend/functions/dondathang/index.php">Hoa chúc mừng</a></li>
+                    <li><a href="../../../backend/functions/nhanvien/index.php">Hoa tình yêu</a></li>
+                    <li><a href="../../../backend/functions/chucvu/index.php">Hoa chia buồn</a></li>
                 </ul>
             </div>
             <div class="col-md-6">
@@ -98,7 +113,7 @@ EOT;
                     $result=mysqli_query($conn,$sql);
                     $row=mysqli_fetch_array($result);
                 ?>
-                <a href="#">
+                <a href="detail.php?hoa_ma=15">
                     <div class="card px-0 mx-0" style="width: 11rem;">
                         <img class="card-img-top mx-auto" style="width: 124px; height= 100px;" src="../../backend/assets/uploads/products/<?=$row['hsp_tentaptin']?>" alt="Card image cap">
                         <div class="card-body">
