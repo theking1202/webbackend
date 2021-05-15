@@ -12,8 +12,9 @@
     ?>
     <div class="container mt-0" style="background-color: white;">
         <div class="row">
-            <div class="col-md-12 text-center" style="height: 300px;">
+            <div class="col-md-12" style="height: 330px;">
                 <h3 style="text-align: center;">SẢN PHẨM BÁN CHẠY</h3>
+                <hr>
                 <?php
                     $sql = <<<EOT
                     select hoa.hoa_ten, hoa.hoa_gia, hoa.hoa_giacu, hsp.hsp_tentaptin ,hoa.hoa_ma
@@ -49,10 +50,11 @@ EOT;
             </div>
         </div>
     </div>
-    <div class="container mt-4" style="background-color: white;">
+    <div class="container mt-3" style="background-color: white;">
         <h4>HOA SINH NHẬT</h4>
+        <hr>
         <div class="row">
-            <div class="col-md-12" style="height: 300px;">
+            <div class="col-md-12" style="height: 265px;">
             <?php
                     $sql = <<<EOT
                     select hoa.hoa_ten, hoa.hoa_gia, hoa.hoa_giacu, hsp.hsp_tentaptin , hoa.hoa_ma
@@ -88,10 +90,11 @@ EOT;
             </div>
         </div>
     </div>
-    <div class="container mt-4" style="background-color: white;">
+    <div class="container mt-3" style="background-color: white;">
         <h4>HOA SINH NHẬT</h4>
+        <hr>
         <div class="row">
-            <div class="col-md-12" style="height: 300px;"style="height: 300px;">
+            <div class="col-md-12" style="height: 265px;">
             <?php
                     $sql = <<<EOT
                     select hoa.hoa_ten, hoa.hoa_gia, hoa.hoa_giacu, hsp.hsp_tentaptin ,hoa.hoa_ma
@@ -127,10 +130,11 @@ EOT;
             </div>
         </div>
     </div>
-    <div class="container mt-4" style="background-color: white;">
+    <div class="container mt-3" style="background-color: white;">
         <h4>HOA SINH NHẬT</h4>
+        <hr>
         <div class="row">
-            <div class="col-md-12" style="height: 300px;">
+            <div class="col-md-12" style="height: 265px;">
             <?php
                     $sql = <<<EOT
                     select hoa.hoa_ten, hoa.hoa_gia, hoa.hoa_giacu, hsp.hsp_tentaptin ,hoa.hoa_ma

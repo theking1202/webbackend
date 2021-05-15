@@ -40,7 +40,7 @@
         <div class="row text-center" style="height: 100px;">
             <div class="col-md-1"></div>
             <div class="col-md-2 mt-4">
-                <img src="../../backend/assets/imgs/pt.png">
+                <a href="index.php"><img src="../../backend/assets/imgs/pt.png"></a>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4 mt-4">
@@ -49,7 +49,7 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm</button>
                     </form>
-                    <a href="#">
+                    <a href="giohang.php">
                         <i class="fa fa-cart-plus fa-3x ml-0" aria-hidden="true"></i>
                     </a>
                 </nav>
