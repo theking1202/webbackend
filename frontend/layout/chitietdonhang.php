@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-8">
                 <form action="thanhtoan.php" method="POST" name="frmThanhtoan" id="frmThanhtoan">
-                    <label for="">Thông tin đơn hàng:</label>
+                    <b>Thông tin đơn hàng:</b>
                     <table style="width: 100%;">
                         <tr>
                             <td>
@@ -47,26 +47,32 @@
                         <tr>
                             <td>
                                 <label for="diachiNhan">Địa chỉ</label>
-                                <?php include_once('../../backend/functions/diachi/index.php')?>
+                                <?php include_once('../../frontend/layout/index2.php')?>
                                 <input type="text" name="diachiNhan" id="diachiNhan"class="form-control" placeholder="Số nhà, tên đường,..">
                             </td>
                         </tr>
                     </table><br>
-                    <b class="mt-5">Thông tin người đặt hàng</b>
+                    <b class="mt-5">Thông tin người đặt hàng:</b>
                     <table style="width: 100%;" >
                         <tr>
                             <td>
                                 <label for="tenMua">Họ Tên</label><br>
-                                <input type="text" name="tenMua" id="tenMua" class="form-control">
+                                <input type="text" name="tenMua" id="tenMua" class="form-control mb-2">
                             </td>
                             <td>
                                 <label for="sdtMua">Số điện thoại</label><br>
-                                <input type="text" name="sdtMua" id="sdtMua" class="form-control">
+                                <input type="text" name="sdtMua" id="sdtMua" class="form-control mb-2">
                             </td>
                         </tr>
                     </table>
                     <input type="hidden" name="date" id="date" value="<?=$ngaygh?>">
-                    <input type="hidden" name="date" id="date" value="<?=$giogh?>">
+                    <input type="hidden" name="time" id="time" value="<?=$giogh?>">
+                    <div style="margin-top:20px;">
+                        <a href="giohang.php" >Trở lại giỏ hàng</a>
+                    </div>
+                    <div class="div" style="text-align:right;">
+                        <button name="btnNext" class="btn btn-primary mb-3" style="text-align:right;">Tiếp Tục</button>
+                    </div>
                 </form>
             </div>
             <div class="col-md-4">
@@ -86,17 +92,26 @@
                 <h6>SẢN PHẨM</h6>
                 <table class="table">
                 <?php
+                    $tongtien=0;
                     foreach($_SESSION['gioHang'] as $sp){
-                        $tongtien=$sp['soluong']*$sp['gia'];
+                        $thanhtien=$sp['soluong']*$sp['gia'];
+                        $tongtien+=$thanhtien;
                 ?>
                     <tr>
-                        <td><?=$sp['ten']?>x<?=$sp['soluong']?></td>
-                        <td style="text-align: right;"> <b><?=number_format($tongtien,'0','.',',')?></b></td>
+                        <td><?=$sp['ten']?> x <?=$sp['soluong']?></td>
+                        <td style="text-align: right;"> <b><?=number_format($thanhtien,'0','.',',')?></b></td>
                     </tr>
                     <?php }?>
+                    <tr>
+                        <td>Tổng thành tiền</td>
+                        <td style="text-align: right;"> <b><?=number_format($tongtien,'0','.',',')?></b></td>
+                    </tr>
                 </table>
 
             </div>
+        </div>
+        <div class="row">
+            
         </div>
     </div>
 

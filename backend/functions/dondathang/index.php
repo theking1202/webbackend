@@ -26,7 +26,6 @@
                     <th>Nơi giao</th>
                     <th>Hình thức thanh toán</th>
                     <th>Tổng thành tiền</th>
-                    <th>Trạng thái thanh toán</th>
                     <th>Hành động</th>
                 </thead>
                 <tbody>
@@ -34,13 +33,13 @@
                         include_once('../../../connectdb.php');
                         $sql  = <<<EOT
                         SELECT dh.dh_ma, dh.dh_ngaylap, dh.dh_ngaygiao,dh.tenkhachhang,
-                        dh.dh_noigiao, httt.httt_ten,dh.dh_trangthaithanhtoan,
+                        dh.dh_noigiao, httt.httt_ten,
                         SUM(hddh.hoa_dh_dongia*hddh.hoa_dh_soluong) AS tongthanhtien
                         FROM dondathang dh
                         JOIN hoa_dondathang hddh ON hddh.dh_ma = dh.dh_ma
                         JOIN hinhthucthanhtoan httt ON httt.httt_ma = dh.httt_ma
                         GROUP BY dh.dh_ma, dh.dh_ngaylap, dh.dh_ngaygiao,
-                        dh.dh_noigiao, httt.httt_ten,dh.dh_trangthaithanhtoan    
+                        dh.dh_noigiao, httt.httt_ten   
 EOT;
                         $result = mysqli_query($conn,$sql);
                         $ddh = [];
@@ -52,7 +51,6 @@ EOT;
                                 'dh_ngaygiao' => $row['dh_ngaygiao'],
                                 'dh_noigiao' => $row['dh_noigiao'],
                                 'httt_ten' => $row['httt_ten'],
-                                'dh_trangthaithanhtoan' => $row['dh_trangthaithanhtoan'],
                                 'tongthanhtien' => $row['tongthanhtien'],
                                 );
                         }
@@ -68,7 +66,6 @@ EOT;
                             <span class="badge badge-primary"><?=$dh['httt_ten']?></span>   
                         </td>
                         <td><?=$dh['tongthanhtien'] ?></td>
-                        <td><?=$dh['dh_trangthaithanhtoan'] ?></td>
                         <td>
                             <a class="btn btn-primary" href="print.php?dh_ma=<?=$dh['dh_ma'] ?>">In</a>
                             <a class="btn btn-danger" href="delete.php?dh_ma=<?=$dh['dh_ma'] ?>">Xóa</a>

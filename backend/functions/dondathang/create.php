@@ -67,11 +67,6 @@ EOT;
                         <input type="text" name="dh_noigiao" id="dh_noigiao" class="form-control"/>
                     </div>
                     <div class="from-group">
-                        <label for="dh_noigiao">Trạng thái thanh toán</label> <br/>
-                        <input type="radio" id="dh_trangthaithanhtoan1" name="dh_trangthaithanhtoan" value="Chưa thanh toán" > Chưa thanh toán <br/>
-                        <input type="radio" id="dh_trangthaithanhtoan2" name="dh_trangthaithanhtoan" value="Đã thanh toán"> Đã thanh toán <br/>
-                    </div>
-                    <div class="from-group">
                         <label for="dh_noigiao">Hình thức thanh toán</label>
                         <select name="httt_ma" class="form-control">
                         <?php foreach($hinhthucthanhtoan as $httt):?>

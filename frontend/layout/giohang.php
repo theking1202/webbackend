@@ -31,7 +31,7 @@
                 if(isset($_SESSION['gioHang'])):
                         
             ?>   
-            <table class="table table-bordered" style="background-color: white;">
+            <table class="table" style="background-color: white;">
                 <th>
                     <td>Tên hoa</td>
                     <td>Số lượng</td>
