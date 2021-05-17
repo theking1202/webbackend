@@ -57,8 +57,8 @@
     <div class="container mt-3" style="background-color: white;">
         <div class="row">
             <div class="col-md-8">
-                <form action="" method="POST" name="frmThanhtoan" id="frmThanhtoan">
-                    <b>Hình thức thanh toán</b>
+                <form action="dathang.php" method="POST" name="frmThanhtoan" id="frmThanhtoan">
+                    <b>Hình thức thanh toán</b><br>
                     <table style="width: 100%;">
                         <?php
                             $sqlTT="SELECT * FROM hinhthucthanhtoan";
@@ -66,24 +66,30 @@
                             $HTTT=[];
                             while($row=mysqli_fetch_array($resultTT, MYSQLI_ASSOC)){
                                 $HTTT[] = array(
-                                    $httt_ma=$row['httt_ma'],
-                                    $httt_ten=$row['httt_ten'],
+                                    'httt_ma'=>$row['httt_ma'],
+                                    'httt_ten'=>$row['httt_ten'],
                                 );
                             }
                         ?>
-                        <select name="" id="">
-                            <?php foreach($row as $tt):?>
-                                <option value=""><?=$tt['httt_ten']?></option>
+                        <select name="httt" id="httt" class="form-control">
+                            <?php foreach($HTTT as $tt):?>
+                                <option value="<?=$tt['httt_ma']?>"><?=$tt['httt_ten']?></option>
                             <?php endforeach;?>
                         </select>
                     </table><br>
-                    
+                    <input type="hidden" name="ngaygh" id="ngaygh" value="<?=$ngaygh?>">
+                    <input type="hidden" name="giogh" id="giogh" value="<?=$giogh?>">
+                    <input type="hidden" name="tenNhan" id="tenNhan" value="<?=$tenNhan?>">
+                    <input type="hidden" name="sdtNhan" id="sdtNhan" value="<?=$sdtNhan?>">
+                    <input type="hidden" name="tenMua" id="tenMua" value="<?=$tenMua?>">
+                    <input type="hidden" name="sdtMua" id="sdtMua" value="<?=$sdtMua?>">
+                    <input type="hidden" name="diachiNhan" id="diachiNhan" value="<?=$diachiNhan?>">
                     
                     <div style="margin-top:20px;">
                         <a href="giohang.php" >Trở lại giỏ hàng</a>
                     </div>
                     <div class="div" style="text-align:right;">
-                        <button name="btnNext" class="btn btn-primary mb-3" style="text-align:right;">Tiếp Tục</button>
+                        <button name="btnDH" class="btn btn-primary mb-3" style="text-align:right;">Đặt hàng</button>
                     </div>
                 </form>
             </div>
@@ -105,7 +111,7 @@
                 <table class="table" >
                     <tr>
                         <td>
-                            Thông tin người gửi
+                            Thông tin người đặt
                         </td>
                         <td style="text-align: right;"> <b><?=$tenMua?> <br> <?=$sdtMua?></b> </td>
                     </tr>
@@ -135,9 +141,7 @@
 
             </div>
         </div>
-        <div class="row">
-            
-        </div>
     </div>
+    
 </body>
 </html>

@@ -77,7 +77,7 @@
                             <option value="15-18">15-18</option>
                         </select>
                         <div class="div" style="text-align:right;">
-                            <button name="btnTT" class="btn my-3" style="background-color: #ff72e1;text-align:right;">Tiếp Tục</button>
+                            <button name="btnTT" class="btn my-3 btn-primary" style="text-align:right;">Tiếp Tục</button>
                         </div>
                     </div>
             </div>

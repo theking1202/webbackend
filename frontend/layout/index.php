@@ -170,5 +170,6 @@ EOT;
             </div>
         </div>
     </div>
+    <?php include_once('../../frontend/layout/footer.php')?>
 </body>
 </html>

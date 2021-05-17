@@ -52,7 +52,13 @@ EOT;
                             <label for="tenkhachhang">Tên khách hàng</label>
                             <input type="text" name="tenkhachhang" id="tenkhachhang" class="form-control"/><br/>
                             <label for="sodienthoai">Số điện thoại</label>
-                            <input type="text" name="sodienthoai" id="sodienthoai" class="form-control"/>
+                            <input type="text" name="sodienthoaimua" id="sodienthoaimua" class="form-control"/>
+                    </div>
+                    <div class="from-group">
+                            <label for="tenkhachhang">Tên người nhận</label>
+                            <input type="text" name="tennguoinhan" id="tennguoinhan" class="form-control"/><br/>
+                            <label for="sodienthoai">Số điện thoại người nhận</label>
+                            <input type="text" name="sodienthoainhan" id="sodienthoainhan" class="form-control"/>
                     </div>
                     <div class="from-group">
                         <label for="dh_ngaylap">Ngày lập</label>
@@ -119,11 +125,12 @@ EOT;
                     // 1. Phân tách lấy dữ liệu người dùng gởi từ REQUEST POST
                     // Thông tin đơn hàng
                     $tenkhachhang = $_POST['tenkhachhang'];
-                    $sodienthoai = $_POST['sodienthoai'];
+                    $sodienthoaimua = $_POST['sodienthoaimua'];
+                    $tennguoinhan = $_POST['tennguoinhan'];
+                    $sodienthoainhan = $_POST['sodienthoainhan'];
                     $dh_ngaylap = $_POST['dh_ngaylap'];
                     $dh_ngaygiao = $_POST['dh_ngaygiao'];
                     $dh_noigiao = $_POST['dh_noigiao'];
-                    $dh_trangthaithanhtoan = $_POST['dh_trangthaithanhtoan'];
                     $httt_ma = $_POST['httt_ma'];
 
                     // Thông tin các dòng chi tiết đơn hàng
@@ -133,7 +140,7 @@ EOT;
                     
                     // 2. Thực hiện câu lệnh Tạo mới (INSERT) Đơn hàng
                     // Câu lệnh INSERT
-                    $sqlInsertDonHang = "INSERT INTO `dondathang` (`dh_ngaylap`, `dh_ngaygiao`, `dh_noigiao`, `dh_trangthaithanhtoan`, `httt_ma`, `tenkhachhang` , `sodienthoai`) VALUES ('$dh_ngaylap', '$dh_ngaygiao', N'$dh_noigiao', '$dh_trangthaithanhtoan', '$httt_ma', '$tenkhachhang', '$sodienthoai')";
+                    $sqlInsertDonHang = "INSERT INTO `dondathang` (`dh_ngaylap`, `dh_ngaygiao`, `dh_noigiao`, `httt_ma`, `tenkhachhang` , `sodienthoaimua` , `tennguoinhan` , `sodienthoainhan`) VALUES ('$dh_ngaylap', '$dh_ngaygiao', N'$dh_noigiao', '$httt_ma', '$tenkhachhang', '$sodienthoaimua' , '$tennguoinhan', '$sodienthoainhan')";
                     // print_r($sqlInsertDonHang); die;
                     
                     // Thực thi INSERT Đơn hàng

@@ -12,15 +12,15 @@
                 $dh_ma=$_GET['dh_ma'];
                 include_once('../../../connectdb.php');
                 $sql  = <<<EOT
-                        SELECT dh.dh_ma, dh.dh_ngaylap, dh.dh_ngaygiao,dh.tenkhachhang,dh.sodienthoai,
-                        dh.dh_noigiao, httt.httt_ten,dh.dh_trangthaithanhtoan,
+                        SELECT dh.dh_ma, dh.dh_ngaylap, dh.dh_ngaygiao,dh.tenkhachhang,dh.sodienthoaimua,
+                        dh.dh_noigiao, httt.httt_ten,dh.tennguoinhan,dh.sodienthoainhan,
                         SUM(hddh.hoa_dh_dongia*hddh.hoa_dh_soluong) AS tongthanhtien
                         FROM dondathang dh
                         JOIN hoa_dondathang hddh ON hddh.dh_ma = dh.dh_ma
                         JOIN hinhthucthanhtoan httt ON httt.httt_ma = dh.httt_ma
                         WHERE dh.dh_ma = $dh_ma   
                         GROUP BY dh.dh_ma, dh.dh_ngaylap, dh.dh_ngaygiao,
-                        dh.dh_noigiao, httt.httt_ten,dh.dh_trangthaithanhtoan
+                        dh.dh_noigiao, httt.httt_ten,dh.tennguoinhan
 EOT;
                 $result = mysqli_query($conn,$sql);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC)
@@ -73,15 +73,27 @@ EOT;
     <table  border="0" width="100%" cellspacing="0">
         <tr>
             <td>Khách hàng:</td>
-            <td><?= $row['tenkhachhang']?> (0<?=$row['sodienthoai']?>)</td>
+            <td><?= $row['tenkhachhang']?> (0<?=$row['sodienthoaimua']?>)</td>
         </tr>
         <tr>
             <td>Ngày lập:</td>
             <td><?= $row['dh_ngaylap']?></td>
         </tr>
         <tr>
+            <td>Ngày giao:</td>
+            <td><?= $row['dh_ngaygiao']?></td>
+        </tr>
+        <tr>
+            <td>Nơi giao:</td>
+            <td><?= $row['dh_noigiao']?></td>
+        </tr>
+        <tr>
+            <td>Người nhận:</td>
+            <td><?= $row['tennguoinhan']?> (0<?=$row['sodienthoainhan']?>)</td>
+        </tr>
+        <tr>
             <td>Hình thức thanh toán:</td>
-            <td><?= $row['httt_ten']?> (<?= $row['dh_trangthaithanhtoan']?>)</td>
+            <td><?= $row['httt_ten']?></td>
         </tr>
         <tr>
             <td>Tổng thành tiền:</td>
