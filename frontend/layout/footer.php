@@ -9,9 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid mt-5" style="background-color: #f59ec6;">
+    <div class="container-fluid mt-5" style="background-color: #ffffff;">
         <div class="row">
-            <div class="container">
+            <div class="container mt-2">
                 <div class="row">
                     <div class="col-md-4">
                         <a href="index.php"><img src="../../backend/assets/imgs/pt.png"></a>

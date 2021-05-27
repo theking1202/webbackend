@@ -45,8 +45,8 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 mt-4">
                 <nav class="navbar">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                    <form class="form-inline" name="frmSearch" id="frmSearch" method="POST" action="timkiem.php">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search" name="timkiem" id="timkiem">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm</button>
                     </form>
                     <a href="giohang.php">
@@ -64,12 +64,12 @@
                     <h4 class="ml-4">Loại sản phẩm</h4>
                 
                 <ul>
-                    <li><a href="../../../backend/functions/loaihoa/index.php">Hoa sinh nhật</a></li>
-                    <li><a href="../../../backend/functions/hoa/index.php">Hoa cưới</a></li>
-                    <li><a href="../../../backend/functions/hinhhoa/index.php">Hoa khai trương</a></li>
-                    <li><a href="../../../backend/functions/dondathang/index.php">Hoa chúc mừng</a></li>
-                    <li><a href="../../../backend/functions/nhanvien/index.php">Hoa tình yêu</a></li>
-                    <li><a href="../../../backend/functions/chucvu/index.php">Hoa chia buồn</a></li>
+                    <li><a href="loaihoa.php?lh_ma=2">Hoa sinh nhật</a></li>
+                    <li><a href="loaihoa.php?lh_ma=1">Hoa cưới</a></li>
+                    <li><a href="loaihoa.php?lh_ma=4">Hoa khai trương</a></li>
+                    <li><a href="loaihoa.php?lh_ma=5">Hoa chúc mừng</a></li>
+                    <li><a href="loaihoa.php?lh_ma=6">Hoa tình yêu</a></li>
+                    <li><a href="loaihoa.php?lh_ma=7">Hoa chia buồn</a></li>
                 </ul>
             </div>
             <div class="col-md-6">
@@ -108,7 +108,7 @@
                     select hoa.hoa_ten, hoa.hoa_gia, hoa.hoa_giacu, hsp.hsp_tentaptin 
                     from hoa 
                     JOIN hinhsanpham AS hsp ON hoa.hoa_ma=hsp.hoa_ma
-                    WHERE hoa.hoa_ma=15
+                    WHERE hoa.hoa_ma=17
 EOT;
                     $result=mysqli_query($conn,$sql);
                     $row=mysqli_fetch_array($result);

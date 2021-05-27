@@ -83,6 +83,7 @@
             </div>
         </form>
     </div>
+    <?php include_once('../../frontend/layout/footer.php')?>
     <script>
     // Yêu cầu JQUERY UI thay thế INPUT text có id="txtNgayThangNamSinh" thành công cụ chọn ngày tháng Date Picker
     $('#date').datepicker(

@@ -70,7 +70,7 @@ EOT;
     <div class="container mt-4" style="background-color:white ;">
         <div class="row">
             <div class="col-md-12 text-center" style="height: 320px;">
-                <h4>Các sản phẩm liên quan</h4>
+                <h4>Các sản phẩm khác</h4>
                 <hr>
                 <?php
                     $sql = <<<EOT
@@ -107,39 +107,7 @@ EOT;
             </div>
         </div>
     </div>
-    <div class="container">
-    <div class="row">
-                <div class="col-md-12" style="margin: 30px;"></div>
-            </div>
-            <hr width="100%" color="orangered"/>
-            <div class="row">
-                <div class="col-md-4 chinhsach">
-                    <h3 style="color: orangered;"><img src="assets/icon/icondoitra.png" height="40px" width="40px"> Miễn phí đổi trả</h3>
-                    <p>Đổi hàng mới 100%</p>
-                    <p>Miễn phí đổi trả nếu có lỗi do nhà sản xuất</p>
-                </div>
-                <div class="col-md-4 chinhsach">
-                    <h3 style="color: orangered;"><img src="assets/icon/iconfreeship.png" height="40px" width="40px">
-                        Miễn phí vận chuyển</h3>
-                    <p>Giao hàng toán quốc</p>
-                    <p>Miễn phí vận cho khách hàng mua online</p>
-
-                </div>
-                <div class="col-md-4 chinhsach">
-                    <h3 style="color: orangered;"><img src="assets/icon/icontuvan.png" height="40px" width="40px">
-                    Chăm sóc khách hàng</h3>
-                    <p>Hỗ trợ tư vấn khách hàng 24/7</p>
-                    <p>Giải đáp mọi thắc mắc khách hàng đưa ra</p>
-                </div>
-            </div>
-            <div class="row">
-            <div class="col-md-12 ">
-                <p class="ghichucuoi"> Bản quyền thuộc công ty TNHH một thành viên TK <br />
-                    Địa chỉ:216/6,phường Hưng Lợi, quận Ninh Kiều, Tp Cần Thơ
-                </p>
-            </div>
-        </div>
-    </div>
+    <?php include_once('../../frontend/layout/footer.php')?>
 
     <?php
         if(isset($_POST['them'])){
@@ -167,6 +135,12 @@ EOT;
             }else{
                 $_SESSION['gioHang'][$hoa_ma]['soluong'] += $soluong;
             }
+            echo '
+                <script>
+                    alert("Thêm vào giỏ hàng thành công");
+                </script>
+                <script>window.location.href="javascript: history.go(-1)"</script>
+            ';
         }
     ?>                 
     
@@ -182,6 +156,7 @@ EOT;
           y = (offsetY / zoomer.offsetHeight) * 100
           zoomer.style.backgroundPosition = x + "% " + y + "%";
         }
+        
       </script>
     
 </body>

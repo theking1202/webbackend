@@ -93,6 +93,7 @@ EOT;
                     $result = mysqli_query($conn,$sql);
                     echo'
                         <script>
+                            alert("Thêm hoa thành công");
                             window.location="index.php";
                         </script>
                     ';

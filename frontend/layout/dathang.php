@@ -25,3 +25,7 @@
             }
         }
     ?>
+    <script>
+        alert("Đặt hàng thành công!!Nhân viên chúng tôi sẽ gọi để sác nhận đơn hàng trong giờ hành chính");
+        window.location.href="index.php"
+    </script>

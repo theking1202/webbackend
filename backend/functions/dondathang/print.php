@@ -61,12 +61,12 @@ EOT;
  
  <!-- Write HTML just like a web page -->
  <article>
-    <table>
+    <table style="text-align: center;">
         <tr>
             <td>
                 <img src="../../assets/imgs/logo-bong-hoa-sen24-1030x773.jpg" alt="" style="width:100px; height:100px">
             </td>
-            <td style="text-align: center;"><h1 >Công ty TNHH Hoa PT Flower</h1></td>
+            <td style="text-align: center;"><b style="font-size: 30px">Công ty TNHH Hoa PT Flower</b></td>
         </tr>
     </table>
     <i>Thông tin đơn hàng</i>
