@@ -68,8 +68,10 @@
             </tbody>
         </table>
         </div>
-    </div>    
+    </div>
+    <div class="fixed-bottom">
     <?php include_once("../../layout/partials/footer.php")?>
+    </div>    
 </div>
 
 

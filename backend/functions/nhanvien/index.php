@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-    <title>Loại Hoa</title>
+    <title>Nhân Viên</title>
 </head>
 <body>
     
@@ -80,7 +80,9 @@ EOT;
         </div>
     </div>    
                     
-<?php include_once("../../layout/partials/footer.php")?>
+    <div class="fixed-bottom">
+    <?php include_once("../../layout/partials/footer.php")?>
+    </div> 
 </div>
 
 

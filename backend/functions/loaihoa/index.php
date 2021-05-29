@@ -63,8 +63,9 @@
         </table>
         </div>
     </div>    
-
-<?php include_once("../../layout/partials/footer.php")?>
+    <div class="fixed-bottom">
+    <?php include_once("../../layout/partials/footer.php")?>
+    </div> 
 </div>
 
 
